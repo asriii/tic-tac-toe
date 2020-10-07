@@ -35,7 +35,7 @@
     <script>
         $(document).ready(function () {
             $('#create').on("click", function (e) {
-                // console.log("e ", e.target.value);
+            
                 $('#endgame').text('');
                 $('#table tbody').empty();
                 var num = $('#inputNumber').val()
@@ -46,8 +46,7 @@
                     tr.push(i);
                     td.push(i);
                 }
-                // console.log("tr ", tr);
-                // console.log("td ", td);
+        
                 tr.forEach(function (vtr, itr) {
                     var temTr = '<tr>';
                     td.forEach(function (vtd, itd) {
@@ -60,7 +59,7 @@
                     temTr += "</tr>"
                     tb.push(temTr);
                 });
-                // console.log("tb ", tb);
+           
                 $('#table tbody').append(tb);
                 inputMask()
             });
@@ -115,7 +114,7 @@
                     } else {
                         /* check condition col */
                         var cs2 = conditionObj(v, e.value);
-                        // console.log("cs2 : ", cs2);
+                       
                         if (!objS2.val && cs2.val) {
                             objS2.val = cs2.val;
                             objS2.col = cs2.col;
@@ -125,7 +124,7 @@
                                 objS2.count = objS2.count + 1;
                             }
                         }
-                        // console.log("count : ", objS2.count);
+                       
                         if (objS2.count == size) {
                             $('#endgame').text("Player : " + e.value + " = Win");
                             $("#form input").attr("disabled", "disabled");
@@ -173,7 +172,7 @@
                     back--;
                 });
             }
-            // console.log("score row : ", score2);
+         
         }
 
         /* เงื่อนไข แถว */
@@ -185,7 +184,7 @@
                     count++;
                 }
             })
-            // console.log("count : ", count)
+           
             return count;
         }
 
